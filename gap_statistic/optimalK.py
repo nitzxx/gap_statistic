@@ -134,7 +134,7 @@ class OptimalK:
         for gap_calc_result in engine(X, n_refs, cluster_array):
 
             # Assign this loop's gap statistic to gaps
-            gap_df = gap_df.append(
+            gap_df = pd.concat(gap_df,
                 {
                     "n_clusters": gap_calc_result.n_clusters,
                     "gap_value": gap_calc_result.gap_value,
